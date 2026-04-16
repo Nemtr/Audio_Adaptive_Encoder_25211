@@ -1,0 +1,4 @@
+streamlit
+librosa
+scikit-learn
+numpy
