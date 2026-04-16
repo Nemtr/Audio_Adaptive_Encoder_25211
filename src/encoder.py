@@ -10,20 +10,16 @@ def compress_audio(input_file, output_file, ai_label):
     
     # Logic Thích ứng nội dung (Content-Adaptive)
     if ai_label == "Speech":
-        # Lời nói: Nén cực mạnh bằng Opus 32kbps
         command.extend(['-c:a', 'libopus', '-b:a', '32k'])
-        
     elif ai_label == "Music":
-        # Âm nhạc: Nén giữ chất lượng bằng AAC 128kbps
         command.extend(['-c:a', 'aac', '-b:a', '128k'])
-        
     elif ai_label == "Noise":
-        # Tạp âm môi trường: Dùng Opus 64kbps (Nén trung bình, cắt bớt tần số cao thừa thãi)
         command.extend(['-c:a', 'libopus', '-b:a', '64k'])
-        
     else: 
-        # Fallback an toàn (nếu có lỗi lạ)
         command.extend(['-c:a', 'libmp3lame', '-b:a', '128k'])
+        
+    # ĐÂY LÀ DÒNG ÔNG LỠ TAY XÓA MẤT NÈ: Chèn tên file đầu ra vào cuối lệnh
+    command.append(output_file)
     
     try:
         # Chạy lệnh FFmpeg ngầm

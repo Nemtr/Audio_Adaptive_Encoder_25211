@@ -11,14 +11,28 @@ DATA_DIR = "data"
 MODEL_PATH = "models/audio_classifier.pkl"
 
 def extract_features(file_path):
-    """Trích xuất MFCC (Đặc trưng âm thanh) từ 1 file audio"""
+    """Trích xuất 30 đặc trưng: Mean và Std của MFCC, ZCR, Centroid"""
     try:
-        # Load audio, giới hạn 30 giây đầu để xử lý cho nhanh
         y, sr = librosa.load(file_path, sr=22050, duration=30.0)
-        # Lấy 13 hệ số MFCC trung bình
+        
+        # 1. MFCC
         mfccs = librosa.feature.mfcc(y=y, sr=sr, n_mfcc=13)
         mfccs_mean = np.mean(mfccs.T, axis=0)
-        return mfccs_mean
+        mfccs_std = np.std(mfccs.T, axis=0) # <-- Lấy thêm độ biến thiên
+        
+        # 2. Zero Crossing Rate
+        zcr = librosa.feature.zero_crossing_rate(y)
+        zcr_mean = np.mean(zcr.T, axis=0)
+        zcr_std = np.std(zcr.T, axis=0) # <-- Lấy thêm độ biến thiên
+        
+        # 3. Spectral Centroid
+        cent = librosa.feature.spectral_centroid(y=y, sr=sr)
+        cent_mean = np.mean(cent.T, axis=0)
+        cent_std = np.std(cent.T, axis=0) # <-- Lấy thêm độ biến thiên
+        
+        # Gộp tất cả (13 + 13 + 1 + 1 + 1 + 1 = 30 chiều dữ liệu)
+        return np.hstack((mfccs_mean, mfccs_std, zcr_mean, zcr_std, cent_mean, cent_std))
+        
     except Exception as e:
         print(f"Lỗi đọc file {file_path}: {e}")
         return None

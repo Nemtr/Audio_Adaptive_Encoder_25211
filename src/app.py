@@ -84,3 +84,7 @@ if uploaded_file is not None:
                     # Lưu ý: file mkv có thể cần định dạng lại để web player đọc được
                     st.audio(temp_output) 
                     st.pyplot(plot_waveform(temp_output, "Waveform Sau Nén"))
+            else:
+                # THÊM ĐOẠN NÀY VÀO ĐỂ BẮT LỖI
+                st.error("❌ Hệ thống nén FFmpeg đã gặp sự cố!")
+                st.code(orig_size) # Khi lỗi, hàm của chúng ta trả về nội dung lỗi ở biến thứ 2
