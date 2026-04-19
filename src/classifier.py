@@ -57,7 +57,7 @@ def build_dataset():
                 features = extract_features(file_path)
                 if features is not None:
                     X.append(features)
-                    # Gán nhãn viết hoa chữ cái đầu cho đẹp (Speech/Music)
+                    # Gán nhãn viết hoa chữ cái đầu (Speech/Music)
                     y.append(cls.capitalize()) 
                     
     return np.array(X), np.array(y)
@@ -73,7 +73,7 @@ def train_model():
     # Chia dữ liệu: 80% để học, 20% để thi thử (test)
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
     
-    # Chọn thuật toán Random Forest (Rừng ngẫu nhiên - Rất mạnh cho dữ liệu dạng bảng)
+    # Chọn thuật toán Random Forest (Rất mạnh cho dữ liệu dạng bảng)
     model = RandomForestClassifier(n_estimators=100, random_state=42)
     
     print("🧠 Đang cho AI học...")
@@ -84,7 +84,7 @@ def train_model():
     acc = accuracy_score(y_test, y_pred)
     print(f"✅ Huấn luyện xong! Độ chính xác trên tập test: {acc * 100:.2f}%")
     
-    # Lưu "bộ não" vào két sắt
+    # Lưu model
     if not os.path.exists("models"):
         os.makedirs("models")
     joblib.dump(model, MODEL_PATH)

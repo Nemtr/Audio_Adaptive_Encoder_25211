@@ -26,8 +26,7 @@ Open your terminal and install Python, Pip, and FFmpeg:
 sudo apt update
 sudo apt install python3 python3-pip python3-venv ffmpeg -y
 
-Step 2: Clone the Repository
-git clone <your-repo-link>
+Step 2: Go to the project directory
 cd Audio_Adaptive_Encoder_25211
 
 Step 3: Setup Virtual Environment
@@ -47,6 +46,7 @@ sudo apt install libsndfile1
 5. How to Run
 Ensure your virtual environment is active (.venv), then run the Streamlit app:
 streamlit run src/app.py
+
 Once the command is executed, open your browser at http://localhost:8501.
 
 6. Project Structure
@@ -64,4 +64,5 @@ Once the command is executed, open your browser at http://localhost:8501.
 Trần Lê Hải Nam (20213580) - Lead Developer for System Design & Backend.
 Nguyễn Hữu Mạnh (20224288) - Lead Developer for Machine Learning & Evaluation.
 Supervisor: TS. Phạm Văn Tiến
+Project management link (Trello): https://trello.com/invite/b/69deae3b4f73c469fafaaef7/ATTI1561262b914cc86f29c0566c4752ecda6CC9FE65/audio-encoder-25211-nen
 

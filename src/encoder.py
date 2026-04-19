@@ -18,7 +18,6 @@ def compress_audio(input_file, output_file, ai_label):
     else: 
         command.extend(['-c:a', 'libmp3lame', '-b:a', '128k'])
         
-    # ĐÂY LÀ DÒNG ÔNG LỠ TAY XÓA MẤT NÈ: Chèn tên file đầu ra vào cuối lệnh
     command.append(output_file)
     
     try:
