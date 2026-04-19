@@ -1,11 +1,13 @@
 README - Audio Adaptive Encoder Project
 
 1. Project Overview
+
 This project, Content-Adaptive Audio Encoder (Project Code: 25211), is an intelligent system designed to optimize audio compression by automatically classifying input content (Speech, Music, or Noise) and routing it to the most efficient codec and bitrate configuration.
 
 The system utilizes Machine Learning (Random Forest) for classification and FFmpeg for high-performance encoding, all wrapped in a user-friendly Streamlit web interface.
 
 2. Key Features
+
 AI-Driven Classification: Automatically identifies audio types using MFCC, Zero Crossing Rate, and Spectral Centroid features.
 
 Dynamic Encoding:
@@ -16,11 +18,13 @@ Dynamic Encoding:
 Interactive Dashboard: Real-time waveform visualization and compression ratio reporting.
 
 3. System Requirements
+
 Operating System: Ubuntu (recommended) or Linux-based systems.
 Python Version: 3.10+
 External Tools: FFmpeg (must be installed in the system PATH).
 
-4. Installation & Setup Instructions
+5. Installation & Setup Instructions
+
 Step 1: Install System Dependencies
 Open your terminal and install Python, Pip, and FFmpeg:
 sudo apt update
@@ -44,12 +48,14 @@ To avoid errors with librosa loading certain audio formats:
 sudo apt install libsndfile1
 
 5. How to Run
+
 Ensure your virtual environment is active (.venv), then run the Streamlit app:
 streamlit run src/app.py
 
 Once the command is executed, open your browser at http://localhost:8501.
 
 6. Project Structure
+
 ├── data/           # Dataset for training (Music, Noise, Speech)
 ├── models/         # Trained Random Forest model (.pkl)
 ├── src/            # Source code
@@ -60,9 +66,13 @@ Once the command is executed, open your browser at http://localhost:8501.
 └── README.md
 
 
-7. Authors
+8. Authors
+
 Trần Lê Hải Nam (20213580) - Lead Developer for System Design & Backend.
+
 Nguyễn Hữu Mạnh (20224288) - Lead Developer for Machine Learning & Evaluation.
+
 Supervisor: TS. Phạm Văn Tiến.
+
 Project management link (Trello): https://trello.com/invite/b/69deae3b4f73c469fafaaef7/ATTI1561262b914cc86f29c0566c4752ecda6CC9FE65/audio-encoder-25211-nen
 
