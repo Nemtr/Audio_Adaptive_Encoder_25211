@@ -73,12 +73,19 @@ Once the command is executed, open your browser at http://localhost:8501.
 6. Project Structure
 
 ├── data/           # Dataset for training (Music, Noise, Speech)
+
 ├── models/         # Trained Random Forest model (.pkl)
+
 ├── src/            # Source code
+
 │   ├── app.py          # Main UI and Streamlit logic
+
 │   ├── classifier.py   # Feature extraction and AI prediction
+
 │   └── encoder.py      # FFmpeg routing and encoding logic
+
 ├── requirements.txt
+
 └── README.md
 
 
