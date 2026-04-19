@@ -63,6 +63,6 @@ Once the command is executed, open your browser at http://localhost:8501.
 7. Authors
 Trần Lê Hải Nam (20213580) - Lead Developer for System Design & Backend.
 Nguyễn Hữu Mạnh (20224288) - Lead Developer for Machine Learning & Evaluation.
-Supervisor: TS. Phạm Văn Tiến
+Supervisor: TS. Phạm Văn Tiến.
 Project management link (Trello): https://trello.com/invite/b/69deae3b4f73c469fafaaef7/ATTI1561262b914cc86f29c0566c4752ecda6CC9FE65/audio-encoder-25211-nen
 
