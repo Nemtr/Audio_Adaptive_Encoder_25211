@@ -54,7 +54,7 @@ pip install --upgrade pip
 
 pip install -r requirements.txt
 
-Note: If you don't have requirements.txt, manually install: pip install librosa pydub scikit-learn streamlit matplotlib joblib
+pip install librosa pydub scikit-learn streamlit matplotlib joblib
 
 Step 5: Install Soundfile (Optional but Recommended)
 
